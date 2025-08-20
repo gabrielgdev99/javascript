@@ -23,4 +23,3 @@ let anoNascimento
 anoNascimento = 2025 - 25
 imc = peso / (altura * altura)
 console.log(`${nome} ${sobrenome} nasceu em ${anoNascimento} tem ${idade} anos e pesa ${peso}kg e tem ${altura} de altura e seu IMC é de ${imc}.`)
-
