@@ -74,7 +74,7 @@ form button:hover {
   background: rgb(253, 123, 123);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
 
 * {
   font-size: 1em;
@@ -87,5 +87,11 @@ form button:hover {
   padding: 20px;
   border-radius: 10px;
 }
+
+.container2 {
+  columns: 1;
+}
+
+
 
 }
