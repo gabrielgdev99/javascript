@@ -40,6 +40,8 @@ class ValidForm {
             this.createError(password, 'Senha precisa estar entre 6 e 12 caracteres.')
 
         }
+
+        return valid
     }
 
     checkFields() {
@@ -74,6 +76,8 @@ class ValidForm {
         if(!cpf.valid()) {
             this.createError(field, 'CPF inválido')
         }
+
+        return valid
     }
 
     validUser(field) {
@@ -88,6 +92,8 @@ class ValidForm {
             this.createError(field, 'Nome de usuário precisa conter apenas letras e/ou números.')
             valid = false
         }
+
+        return valid
     }
 
     createError(field, msg) {
