@@ -19,26 +19,6 @@ function wait(msg, time) {
     })
 }
 
-// wait('Frase 1', alet())
-// .then(value => {
-//     console.log(value)
-//     return wait('Frase 2', alet())
-// })
-// .then(phase => {
-//     console.log(phase)
-//     return wait('Frase 3', alet())
-// })
-// .then(phase => {
-//     console.log(phase)
-//     return phase
-// })
-// .then(phase => {
-//     console.log('Terminou')
-// })
-// .catch(e => console.log(e))
-
-
-
 //USANDO ASYNC
 
 async function exec() {
@@ -57,6 +37,7 @@ async function exec() {
         console.log(e)
     }
 }
-
 exec()
+
+
     
