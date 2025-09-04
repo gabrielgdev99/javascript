@@ -26,33 +26,23 @@ body {
   border-radius: 10px;
 }
 
-form input, form label, form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+.senha-gerada {
+  font-size: 2em;
+  color: var(--primary-color);
+  margin: 40px 0;
+  word-wrap: break-word;
 }
 
-form input {
-  font-size: 24px;
-  height: 50px;
-  padding: 0 20px;
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
 }
 
-form input:focus {
-  outline: 1px solid var(--primary-color);
+button {
+  width: 150px;
+  height: 30px;
 }
 
-form button {
-  border: none;
-  background: var(--primary-color);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  height: 50px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-form button:hover {
-  background: var(--primary-color-darker);
+p {
+  margin: 8px 0;
 }
