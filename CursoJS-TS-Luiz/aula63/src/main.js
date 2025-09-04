@@ -1,5 +1,5 @@
-import generatePassForm from "./modules/formGeraSenha";
+import generatePass from "./modules/formGeraSenha";
 
 import "./assets/css/style.css";
 
-generatePassForm();
+generatePass();
