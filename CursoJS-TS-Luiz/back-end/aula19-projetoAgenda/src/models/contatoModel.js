@@ -6,7 +6,7 @@ const ContatoSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   sobrenome: { type: String, required: false, default: "" },
   email: { type: String, required: false, default: "" },
-  telefone: { type: String, required: false, default: "" },
+  tel: { type: String, required: false, default: "" },
   criadoEm: { type: Date, default: Date.now },
 });
 
@@ -32,7 +32,7 @@ Contato.prototype.valida = function () {
   if (this.body.email && !validator.isEmail(this.body.email))
     this.errors.push("Email inválido.");
   if (!this.body.nome) this.errors.push("Nome é um campo obrigatório");
-  if (!this.body.email && !this.body.telefone)
+  if (!this.body.email && !this.body.tel)
     this.errors.push(
       "Pelo menos um contato precisa ser enviado: email ou telefone."
     );
@@ -47,10 +47,38 @@ Contato.prototype.cleanUp = function () {
 
   this.body = {
     nome: this.body.nome,
-    spbrenome: this.body.sobrenome,
+    sobrenome: this.body.sobrenome,
     email: this.body.email,
-    telefone: this.body.telefone,
+    tel: this.body.tel,
   };
+};
+
+Contato.prototype.editContato = async function (id) {
+  if (typeof id !== "string") return;
+  this.valida();
+  if (this.errors.length > 0) return;
+  this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, {
+    new: true,
+  });
+};
+
+//METODOS ESTATICOS
+Contato.buscaId = async function (id) {
+  if (typeof id !== "string") return;
+  const user = await ContatoModel.findById(id);
+  return user;
+};
+
+Contato.buscaContatos = async function () {
+  const contatos = await ContatoModel.find().sort({ criadoEm: -1 });
+  return contatos;
+};
+
+Contato.delete = async function (id) {
+  if (typeof id !== "string") return;
+
+  const contato = await ContatoModel.findOneAndDelete({ _id: id });
+  return contato;
 };
 
 module.exports = Contato;

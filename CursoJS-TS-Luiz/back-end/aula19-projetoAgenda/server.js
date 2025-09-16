@@ -25,7 +25,56 @@ const {
   csrfMiddleware,
 } = require("./src/middlewares/middleware"); //MIDDLEWARES QUE SÃO EXECUTADAS NAS ROTAS
 
-app.use(helmet()); //INICIANDO O HELMET
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        defaultSrc: ["'self'"],
+
+        // JS
+        scriptSrc: [
+          "'self'",
+          "https://cdn.jsdelivr.net",
+          "https://code.jquery.com",
+        ],
+        scriptSrcElem: [
+          "'self'",
+          "https://cdn.jsdelivr.net",
+          "https://code.jquery.com",
+        ],
+
+        // CSS
+        styleSrc: [
+          "'self'",
+          "https://cdn.jsdelivr.net",
+          "https://fonts.googleapis.com",
+          "'unsafe-inline'",
+        ],
+        styleSrcElem: [
+          "'self'",
+          "https://cdn.jsdelivr.net",
+          "https://fonts.googleapis.com",
+          "'unsafe-inline'",
+        ],
+
+        // ✅ permitir conexões (preconnect/fetch) aos CDNs
+        connectSrc: [
+          "'self'",
+          "https://cdn.jsdelivr.net",
+          "https://code.jquery.com",
+        ],
+
+        imgSrc: ["'self'", "data:"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
+        objectSrc: ["'none'"],
+        baseUri: ["'self'"],
+        frameAncestors: ["'self'"],
+        upgradeInsecureRequests: [], // opcional
+      },
+    },
+  })
+);
 app.use(express.urlencoded({ extended: true })); //HABILITA QUE PODEMOS POSTAR FORMULARIOS PARA DENTRO DA NOSSA APLICAÇÃO
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "public"))); //TODOS ARQUIVOS QUE SÃO ESTATICOS QUE PODEM SER USADOS NA NOSSA APLICAÇÃO
