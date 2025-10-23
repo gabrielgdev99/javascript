@@ -19,7 +19,7 @@ class AlunoController {
       ],
       include: {
         model: Foto,
-        attributes: ["originalname"],
+        attributes: ["url", "originalname"],
       },
     });
     res.json(alunos);
@@ -63,7 +63,7 @@ class AlunoController {
         ],
         include: {
           model: Foto,
-          attributes: ["originalname"],
+          attributes: ["url", "originalname"],
         },
       });
 
