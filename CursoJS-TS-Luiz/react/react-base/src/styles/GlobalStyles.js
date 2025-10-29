@@ -1,4 +1,4 @@
-import { createGlobalStyle, styled } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import * as colors from "../config/colors";
 import "react-toastify/dist/ReactToastify.css";
 

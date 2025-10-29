@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://projetoapi.singularia.net.br",
+  baseURL: "COLOQUE_SUA_URL_AQUI",
 });
