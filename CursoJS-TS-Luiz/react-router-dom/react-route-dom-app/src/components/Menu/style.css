@@ -1,0 +1,14 @@
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  background: #4d4d4d;
+  height: 40px;
+  align-items: center;
+  padding-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
