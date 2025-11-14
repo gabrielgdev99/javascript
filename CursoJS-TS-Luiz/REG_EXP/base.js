@@ -47,4 +47,15 @@ const html2 = "<p class='teste'>Olá mundo</p> <p>Olá mundo</p> <div>Sou a div<
 const alfabeto =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz @! 0123456789 !";
 
-export { texto, arquivos, html, alfabeto, cpfs, ips, cpfs2, html2 };
+const lookahead = `
+ONLINE 192.168.0.1 ABCDEF inactive
+OFFLINE 192.168.0.2 ABCDEF active
+ONLINE 192.168.0.3 ABCDEF active
+ONLINE 192.168.0.4 ABCDEF active
+OFFLINE 192.168.0.5 ABCDEF active
+OFFLINE 192.168.0.6 ABCDEF inactive
+`
+
+
+
+export { texto, arquivos, html, alfabeto, cpfs, ips, cpfs2, html2, lookahead };
